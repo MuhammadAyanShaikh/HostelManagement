@@ -1,0 +1,20 @@
+Assalam O Alaikum Ma'am Kainat Nazir,
+
+You've Said To Submit Executable Files.
+All The project Files Are Executable When Used Combine
+
+Just do These Steps.
+
+1. You Should Have A Running XAMPP Server. Run Apache And MySQL On Your XAMPP Control Panel
+2. Copy Folders "FlateMate" And "FlateMate_Admin" In C:\xampp\htdocs
+3. Now Open MySQL Files And Run All Three SQL Files In Correct Order To Create And Initialize Database
+4. Now Open "Localhost/Flatemate/" on your Web Browser To View Initial Front End. (This Will Be user View)
+5. Book Any Of The Hostel From there By Filling Form.
+6. Now Go To "Localhost/Flatemate_admin/Dashboard.php" To View Admin View Of The Bookings
+
+Database Systems Project Completed
+Hostel Management System With Admin View And Booking Website Created.
+
+Project By Group
+Muhammad Ayan Ali (242746)
+Muhammad Bilal Nasir (242755)
