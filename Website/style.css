@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #0b2a42;
+}
+.imglogo{
+width:200px ;
+height: 30px;
+
+}
+#lnk1 a:hover{
+background-color: skyblue;
+}
+
+#lnk2 a:hover{
+    background-color: skyblue;
+}
+
+#lnk3 a:hover{
+    background-color: skyblue;
+}
+        
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    size: 20px;
+}
+#mainh1{
+color: #023047;
+font-family: Montserrat;
+font-size: 68px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+margin-left: -400px;
+margin-top: -150px;
+}
+#mainh2{
+color: #023047;
+font-family: Montserrat;
+font-size: 30px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+width: 590px;
+height: 73px;
+flex-shrink: 0;
+text-align: left;
+}
+#butt11{
+color: #8ECAE6;
+font-family: Montserrat;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+text-decoration-line: underline;
+text-decoration-style: solid;
+text-decoration-skip-ink: none;
+text-decoration-thickness: auto;
+text-underline-offset: auto;
+width: 300px;
+height: 27px;
+flex-shrink: 0;
+margin-left: -980px;
+}
+.navbar-nav a {
+    color: white !important;
+    margin: 0 10px;
+}
+
+.search-box {
+    background-color: #0b2a42;
+    color: white;
+    padding: 25px;
+    border-radius: 10px;
+    position: relative;
+    top: -50px;
+}
+
+.featured-hostels img {
+    border-radius: 10px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+#c1 :hover{
+    border: #023047;
+    border: 10px;
+    width: 105%;
+    height: 70%; 
+}
+#c2 :hover{
+    border: #023047;
+    border: 10px;
+    width: 105%;
+    height: 70%; 
+}
+#c3 :hover{
+    border: #023047;
+    border: 10px;
+    width: 105%;
+    height: 70%; 
+}
+#c4 :hover{
+    border: #023047;
+    border: 10px;
+    width: 105%;
+    height: 70%; 
+}
+.promotions img {
+    border-radius: 10px;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.testimonial-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+.testimonial-card {
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+footer {
+    background-color: #0b2a42;
+    color: white;
+    padding: 20px 0;
+}
+
+        .mission-section {
+            padding: 50px 20px;
+            text-align: left;
+        }
+
+        .mission-section h5 {
+            font-weight: bold;
+            color: #0C2835;
+        }
+
+        .mission-section p {
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        .team-section {
+            background-color: #FFF4F4;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .team-section h2 {
+            color: #0C2835;
+            font-weight: bold;
+        }
+
+        .team-member img {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 10px;
+        }
+
+        .team-member p {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .contact-container {
+            padding: 50px 20px;
+        }
+
+        .contact-info {
+            background-color: #00263A;
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        #items{
+            justify-content: flex-end;
+            align-items: baseline;
+            align-content: end;
+        }
+
+        .contact-info h4 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        .contact-info i {
+            color: #47B5FF;
+            margin-right: 10px;
+        }
+
+        .contact-form {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .contact-form button {
+            background-color: #47B5FF;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .contact-form button:hover {
+            background-color: #3592D0;
+        }
+
+        .social-icons a {
+            color: #ffffff;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .social-icons a:hover {
+            color: #47B5FF;
+        }

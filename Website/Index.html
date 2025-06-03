@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlateMate</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
+    <style>
+        .hero-section {
+            background-image: url('Resources/Hero.png');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            color: #0b2a42;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            width: 500px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="Index.html"><img src="Resources/FlateMate.png" alt="Logo" class="imglogo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="Index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="About.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="Contact.html">Contact Us</a></li>
+                <li class="nav-item"><button class="btn btn-primary">Sign Up</button></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1>Your Mate FlateMate</h1>
+        <p>Find The Best Hostels Of The Town All Over The World!</p>
+        <a href="Index.html" class="btn btn-outline-light">Explore More</a>
+    </div>
+</section>
+
+<!-- Search Section -->
+<div class="container">
+    <div class="search-box text-center">
+        <form class="row" id="searchForm">
+            <div class="col-md-3 mb-3">
+                <label>Location</label>
+                <select id="locationSelect" class="form-select">
+                    <option value="">Select Location</option>
+                    <option value="Ikeja, Lagos">Hyderabad</option>
+                    <option value="Royal Taj">Karachi</option>
+                    <option value="Apapa, Lagos">Islamabad</option>
+                    <option value="Lekki, Lagos">Lahore</option>
+                </select>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label>Check-in</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col-md-2 mb-3">
+                <label>Check-out</label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col-md-3 mb-3">
+                <label>Guests</label>
+                <select class="form-select">
+                    <option>1 Guest</option>
+                    <option>2 Guests</option>
+                    <option>3+ Guests</option>
+                </select>
+            </div>
+            <div class="col-md-2 d-flex" style="margin-top: 23px;">
+                <button type="button" class="btn btn-primary w-100" onclick="filterHostels()">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Featured Hostels -->
+<section class="container featured-hostels my-5" id="hostelsSection">
+    <h2 class="text-center mb-4">Featured Hostels</h2>
+    <div class="row" id="hostelsList">
+        <div class="col-md-3 hostel" data-location="Ikeja, Lagos">
+            <div>
+                <img src="Resources/img1.png" alt="Hostel">
+                <h5 class="mt-2">Hyderabad Hostel</h5>
+                <p>$2,000/night</p>
+                <p>3+ Guests</p>
+            </div>
+            <button class="btn btn-primary" onclick="openBookingPopup(1, 2000)">Book Now</button>
+        </div>
+        <div class="col-md-3 hostel" data-location="Royal Taj">
+            <div>
+                <img src="Resources/img2.png" alt="Hostel">
+                <h5 class="mt-2">Karachi Hostel</h5>
+                <p>$1,800/night</p>
+                <p>3+ Guests</p>
+            </div>
+            <button class="btn btn-primary" onclick="openBookingPopup(2, 1800)">Book Now</button>
+        </div>
+        <div class="col-md-3 hostel" data-location="Apapa, Lagos">
+            <div>
+                <img src="Resources/img3.png" alt="Hostel">
+                <h5 class="mt-2">Islamabad Hostel</h5>
+                <p>$2,200/night</p>
+                <p>3+ Guests</p>
+            </div>
+            <button class="btn btn-primary" onclick="openBookingPopup(3, 2200)">Book Now</button>
+        </div>
+        <div class="col-md-3 hostel" data-location="Lekki, Lagos">
+            <div>
+                <img src="Resources/img4.png" alt="Hostel">
+                <h5 class="mt-2">Lahore Hostel</h5>
+                <p>$2,500/night</p>
+                <p>3+ Guests</p>
+            </div>
+            <button class="btn btn-primary" onclick="openBookingPopup(4, 2500)">Book Now</button>
+        </div>
+    </div>
+</section>
+
+<!-- Booking Popup -->
+<div id="bookingPopup" class="popup">
+    <form id="bookingForm" class="popup-content">
+        <span onclick="document.getElementById('bookingPopup').style.display='none'"
+              style="cursor:pointer; float:right; font-size:20px;">&times;</span>
+
+        <h2>Book Your Stay</h2>
+        <input type="hidden" id="hostel_id">
+        <input type="hidden" id="price_per_night">
+
+        <label>First Name:</label>
+        <input type="text" id="first_name" required><br><br>
+
+        <label>Last Name:</label>
+        <input type="text" id="last_name"><br><br>
+
+        <label>Email:</label>
+        <input type="email" id="email" required><br>
+
+        <label>Phone Number:</label>
+        <input type="tel" id="phone" required><br><br>
+
+        <label>Message:</label>
+        <textarea id="message"></textarea><br><br>
+
+        <label>Check-in Date:</label>
+        <input type="date" id="checkin" required><br>
+
+        <label>Check-out Date:</label>
+        <input type="date" id="checkout" required><br><br>
+
+        <label>Number of Guests:</label>
+        <input type="number" id="num_guests" min="1" value="1" required><br><br>
+
+        <label>Total Price:</label>
+        <input type="text" id="total_price" readonly><br><br>
+
+        <button type="submit">Confirm Booking</button>
+    </form>
+</div>
+
+<!-- JavaScript -->
+<script>
+    function filterHostels() {
+        const selectedLocation = document.getElementById('locationSelect').value;
+        const hostels = document.querySelectorAll('.hostel');
+        hostels.forEach(hostel => {
+            const hostelLocation = hostel.getAttribute('data-location');
+            hostel.style.display = (selectedLocation === "" || hostelLocation === selectedLocation) ? 'block' : 'none';
+        });
+    }
+
+    function openBookingPopup(hostelId, pricePerNight) {
+        document.getElementById('bookingPopup').style.display = 'flex';
+        document.getElementById('hostel_id').value = hostelId;
+        document.getElementById('price_per_night').value = pricePerNight;
+
+        const calculateTotal = () => {
+            const checkin = new Date(document.getElementById('checkin').value);
+            const checkout = new Date(document.getElementById('checkout').value);
+            const days = (checkout - checkin) / (1000 * 60 * 60 * 24);
+            const price = parseFloat(document.getElementById('price_per_night').value);
+            const total = (days > 0) ? days * price : 0;
+            document.getElementById('total_price').value = total.toFixed(2);
+        };
+
+        document.getElementById('checkin').addEventListener('change', calculateTotal);
+        document.getElementById('checkout').addEventListener('change', calculateTotal);
+    }
+
+    document.getElementById('bookingForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const data = {
+            hostel_id: document.getElementById('hostel_id').value,
+            first_name: document.getElementById('first_name').value,
+            last_name: document.getElementById('last_name').value,
+            email: document.getElementById('email').value,
+            phone: document.getElementById('phone').value,
+            message: document.getElementById('message').value,
+            checkin: document.getElementById('checkin').value,
+            checkout: document.getElementById('checkout').value,
+            num_guests: document.getElementById('num_guests').value,
+            total_price: document.getElementById('total_price').value
+        };
+
+        fetch('backend/book.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        }).then(res => res.json())
+          .then(resp => {
+              alert(resp.message);
+              document.getElementById('bookingPopup').style.display = 'none';
+          });
+    });
+</script>
+
+</body>
+</html>
